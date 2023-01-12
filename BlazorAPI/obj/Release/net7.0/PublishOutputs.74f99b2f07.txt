@@ -1,0 +1,12 @@
+C:\Users\Dane\source\repos\BlazorAPI\BlazorAPI\obj\Release\net7.0\PubTmp\Out\BlazorAPI.exe
+C:\Users\Dane\source\repos\BlazorAPI\BlazorAPI\obj\Release\net7.0\PubTmp\Out\appsettings.Development.json
+C:\Users\Dane\source\repos\BlazorAPI\BlazorAPI\obj\Release\net7.0\PubTmp\Out\appsettings.json
+C:\Users\Dane\source\repos\BlazorAPI\BlazorAPI\obj\Release\net7.0\PubTmp\Out\BlazorAPI.dll
+C:\Users\Dane\source\repos\BlazorAPI\BlazorAPI\obj\Release\net7.0\PubTmp\Out\BlazorAPI.deps.json
+C:\Users\Dane\source\repos\BlazorAPI\BlazorAPI\obj\Release\net7.0\PubTmp\Out\BlazorAPI.runtimeconfig.json
+C:\Users\Dane\source\repos\BlazorAPI\BlazorAPI\obj\Release\net7.0\PubTmp\Out\BlazorAPI.pdb
+C:\Users\Dane\source\repos\BlazorAPI\BlazorAPI\obj\Release\net7.0\PubTmp\Out\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Dane\source\repos\BlazorAPI\BlazorAPI\obj\Release\net7.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\Dane\source\repos\BlazorAPI\BlazorAPI\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Dane\source\repos\BlazorAPI\BlazorAPI\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Dane\source\repos\BlazorAPI\BlazorAPI\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
