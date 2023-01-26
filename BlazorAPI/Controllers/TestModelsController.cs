@@ -95,6 +95,21 @@ namespace BlazorAPI.Controllers
             return CreatedAtAction("GetTestModel", new { id = testModel.Id }, testModel);
         }
 
+        // DELETE: api/TestModels/
+        [HttpDelete]
+        public async Task<IActionResult> DeleteTestModel()
+        {
+            if (_context.TestModel == null)
+            {
+                return NotFound();
+            }
+           
+            _context.TestModel.ExecuteDelete();
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
         // DELETE: api/TestModels/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTestModel(int id)
