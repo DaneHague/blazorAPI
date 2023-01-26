@@ -18,9 +18,6 @@ namespace BlazorAPI.Models
         public string baseType { get; set; }
         public bool identified { get; set; }
         public int ilvl { get; set; }
-        public string properties { get; set; }
-        public string explicitMods { get; set; }
-        public string flavourText { get; set; }
         public int frameType { get; set; }
         public string artFilename { get; set; }
         public int x { get; set; }
