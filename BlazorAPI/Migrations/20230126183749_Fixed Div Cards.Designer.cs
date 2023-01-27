@@ -3,6 +3,7 @@ using BlazorAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorAPI.Migrations
 {
     [DbContext(typeof(PoEDBContext))]
-    partial class PoEDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230126183749_Fixed Div Cards")]
+    partial class FixedDivCards
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,10 +69,6 @@ namespace BlazorAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("rewardText")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

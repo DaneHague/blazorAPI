@@ -410,6 +410,12 @@
         "artFilename": {
           "type": "string"
         },
+        "cardText": {
+          "type": "string"
+        },
+        "rewardText": {
+          "type": "string"
+        },
         "x": {
           "format": "int32",
           "type": "integer"
