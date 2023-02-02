@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BlazorAPI.Models.BlazorApp2.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlazorAPI.Models
 {
@@ -11,5 +12,8 @@ namespace BlazorAPI.Models
 
         public DbSet<DivinationCard> DivinationCard { get; set; }
         public DbSet<TestModel> TestModel { get; set; }
+        public DbSet<CurrencyReference> CurrencyReferences { get; set; }
+
+        public DbSet<Currency> Currency { get; set; }
     }
 }

@@ -5,6 +5,143 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Currencies": {
+      "get": {
+        "tags": [
+          "Currencies"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Currency"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Currencies"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Currency"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Currency"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Currencies/{id}": {
+      "get": {
+        "tags": [
+          "Currencies"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Currency"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Currencies"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Currency"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Currencies"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/DivinationCards": {
       "get": {
         "tags": [
@@ -312,6 +449,80 @@
     }
   },
   "definitions": {
+    "Currency": {
+      "type": "object",
+      "properties": {
+        "verified": {
+          "type": "boolean"
+        },
+        "w": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "h": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "stackSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "maxStackSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "league": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "typeLine": {
+          "type": "string"
+        },
+        "baseType": {
+          "type": "string"
+        },
+        "identified": {
+          "type": "boolean"
+        },
+        "ilvl": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "frameType": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "artFilename": {
+          "type": "string"
+        },
+        "cardText": {
+          "type": "string"
+        },
+        "rewardText": {
+          "type": "string"
+        },
+        "x": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "y": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "inventoryId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
     "DateOnly": {
       "type": "object",
       "properties": {

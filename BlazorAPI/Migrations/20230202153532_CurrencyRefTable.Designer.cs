@@ -3,6 +3,7 @@ using BlazorAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorAPI.Migrations
 {
     [DbContext(typeof(PoEDBContext))]
-    partial class PoEDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230202153532_CurrencyRefTable")]
+    partial class CurrencyRefTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,83 +42,7 @@ namespace BlazorAPI.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("CurrencyReferences", (string)null);
-                });
-
-            modelBuilder.Entity("BlazorAPI.Models.Currency", b =>
-                {
-                    b.Property<string>("id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("artFilename")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("baseType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("cardText")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("frameType")
-                        .HasColumnType("int");
-
-                    b.Property<int>("h")
-                        .HasColumnType("int");
-
-                    b.Property<string>("icon")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("identified")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ilvl")
-                        .HasColumnType("int");
-
-                    b.Property<string>("inventoryId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("league")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("maxStackSize")
-                        .HasColumnType("int");
-
-                    b.Property<string>("name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("rewardText")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("stackSize")
-                        .HasColumnType("int");
-
-                    b.Property<string>("typeLine")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("verified")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("w")
-                        .HasColumnType("int");
-
-                    b.Property<int>("x")
-                        .HasColumnType("int");
-
-                    b.Property<int>("y")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Currency", (string)null);
+                    b.ToTable("CurrencyReferences");
                 });
 
             modelBuilder.Entity("BlazorAPI.Models.DivinationCard", b =>
@@ -191,7 +118,7 @@ namespace BlazorAPI.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("DivinationCard", (string)null);
+                    b.ToTable("DivinationCard");
                 });
 
             modelBuilder.Entity("BlazorAPI.Models.TestModel", b =>
@@ -207,7 +134,7 @@ namespace BlazorAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TestModel", (string)null);
+                    b.ToTable("TestModel");
                 });
 #pragma warning restore 612, 618
         }
