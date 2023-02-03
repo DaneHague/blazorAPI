@@ -118,6 +118,9 @@ namespace BlazorAPI.Controllers
             {
                 return Problem("Entity set 'PoEDBContext.DivinationCard'  is null.");
             }
+
+            _context.DivinationCard.ExecuteDelete();
+
             foreach (var item in divinationCard)
             {
                 _context.DivinationCard.Add(item);

@@ -496,17 +496,17 @@
           "format": "int32",
           "type": "integer"
         },
-        "frameType": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "artFilename": {
+        "rewardText": {
           "type": "string"
         },
         "cardText": {
           "type": "string"
         },
-        "rewardText": {
+        "frameType": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "artFilename": {
           "type": "string"
         },
         "x": {

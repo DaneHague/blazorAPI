@@ -116,6 +116,9 @@ namespace BlazorAPI.Controllers
             {
                 return Problem("Entity set 'PoEDBContext.DivinationCard'  is null.");
             }
+
+            _context.Currency.ExecuteDelete();
+
             foreach (var item in tst)
             {
                 _context.Currency.Add(item);
