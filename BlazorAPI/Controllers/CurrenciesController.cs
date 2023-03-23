@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BlazorAPI.Models;
+using MyBackgroundWorkerService;
 
 namespace BlazorAPI.Controllers
 {
@@ -14,10 +15,19 @@ namespace BlazorAPI.Controllers
     public class CurrenciesController : ControllerBase
     {
         private readonly PoEDBContext _context;
+        private readonly Worker _worker;
 
-        public CurrenciesController(PoEDBContext context)
+        public CurrenciesController(PoEDBContext context, Worker worker)
         {
             _context = context;
+            _worker = worker;
+        }
+
+        [HttpPost("enqueue-task")]
+        public IActionResult EnqueueTask([FromBody] string task)
+        {
+            _worker.EnqueueTask(task);
+            return Ok("Task added to the queue.");
         }
 
         // GET: api/Currencies

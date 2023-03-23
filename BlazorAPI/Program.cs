@@ -1,6 +1,7 @@
 using Azure.Identity;
 using BlazorAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using MyBackgroundWorkerService;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -21,6 +22,8 @@ builder.Services.AddCors(options =>
 });
 
 
+builder.Services.AddSingleton<Worker>(); // Register Worker as a singleton
+builder.Services.AddHostedService(provider => provider.GetRequiredService<Worker>());
 
 
 builder.Configuration.AddAzureKeyVault(new Uri($"https://balzorexamplepoevault.vault.azure.net/"), new DefaultAzureCredential());
