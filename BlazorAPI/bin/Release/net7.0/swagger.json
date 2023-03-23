@@ -5,6 +5,32 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Currencies/enqueue-task": {
+      "post": {
+        "tags": [
+          "Currencies"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Currencies": {
       "get": {
         "tags": [

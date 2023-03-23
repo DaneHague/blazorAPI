@@ -12,6 +12,7 @@ namespace MyBackgroundWorkerService
         private readonly ILogger<Worker> _logger;
         private readonly ConcurrentQueue<string> _taskQueue;
         private readonly SemaphoreSlim _signal;
+        private Timer _timer;
 
         public Worker(ILogger<Worker> logger)
         {
@@ -46,7 +47,26 @@ namespace MyBackgroundWorkerService
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            _timer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(5));
             await ProcessTasks(stoppingToken);
+        }
+        private void DoWork(object state)
+        {
+            _logger.LogInformation("Timer triggered at: {time}", DateTimeOffset.Now);
+
+            // Your background task logic here
+        }
+
+        public override async Task StopAsync(CancellationToken stoppingToken)
+        {
+            _timer?.Change(Timeout.Infinite, 0);
+            await base.StopAsync(stoppingToken);
+        }
+
+        public override void Dispose()
+        {
+            _timer?.Dispose();
+            base.Dispose();
         }
     }
 }
